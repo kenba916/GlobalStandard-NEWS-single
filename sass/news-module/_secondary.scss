@@ -1,0 +1,92 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+
+/* secondary
+===================================== */
+.secondary {
+    width: 100%;
+    margin-bottom: 60px;
+
+    @include config.mq('tab-pc') {
+        width: 27%;
+    }
+}
+
+.sidebar-ttl {
+    @include config.mq('tab-pc') {
+        font-size: 20px;
+    }
+}
+
+.sidebar-item {
+    &:not(:first-child) {
+        @include config.mq('tab-pc') {
+            margin-top: 16px;
+        }
+    }
+}
+
+.sidebar-img {
+    @include config.mq('tab-pc') {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.sidebar-wrapper {
+    @include config.mq('tab-pc') {
+        margin-left: 10q;
+    }
+}
+
+.sidebar-tag {
+    @include config.mq('tab-pc') {
+        padding: 5px 12px;
+    }
+}
+
+.sidebar-txt {
+    @include config.mq('tab-pc') {
+        font-size: 14px;
+        margin-top: 9px;
+    }
+}
+
+
+
+
+/* categories
+===================================== */
+.categories {
+    margin-top: 60px;
+}
+
+.category-item {
+    padding: 16px 0 16px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid color.$color-border;
+    transition: .3s ease;
+
+    &:hover {
+        background: #f8f8f8;
+    }
+
+    &:first-of-type{
+        border-top: 1px solid color.$color-border;
+    }
+}
+
+.category-item_icon {
+    font-size: 24px;
+    color: color.$color-main;
+}
+
+.category-item_txt {
+    font-size: 16px;
+    margin-left: 10px;
+    color: color.$color-text-black;
+    font-weight: bold;
+}

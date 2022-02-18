@@ -1,0 +1,31 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+
+/* contact
+===================================== */
+.contact-form {
+    width: 100%;
+    max-width: 688px;
+    margin: 0 auto;
+}
+
+.contact-form_txt {
+    margin-bottom: 60px;
+
+    @include config.mq('tab-pc') {
+        margin-bottom: 80px;
+    }
+}
+
+.contact-form_ttl {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include config.mq('tab-pc') {
+        margin-bottom: 60px;
+    }
+}

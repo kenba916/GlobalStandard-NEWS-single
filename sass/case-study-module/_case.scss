@@ -1,0 +1,241 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+/* case study
+===================================== */
+.case-categories {
+    @include config.mq('tab') {
+        display: flex;
+    }
+}
+
+.case-category {
+    background: #eee;
+    border-radius: 5px;
+    transition: .3s ease;
+    color: color.$color-text-black;
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 12px 0;
+
+    @include config.mq('tab') {
+        width: 208px;
+        margin: 0;
+    }
+
+    &:hover {
+        color: #fff;
+        background: color.$color-main;
+    }
+
+    &:not(:first-child) {
+        margin-top: 20px;
+
+        @include config.mq('tab') {
+            margin-top: 0;
+            margin-left: 16px;
+        }
+    }
+}
+
+#case-box1,
+#case-box2,
+#case-box3 {
+    margin-top: 60px;
+
+    @include config.mq('tab') {
+        margin-top: 80px;
+    }
+}
+
+.case-box_ttls {
+    border-left: 8px solid color.$color-main;
+    font-weight: bold;
+    padding-left: 10px;
+    line-height: 1.42;
+    margin-bottom: 25px;
+
+    @include config.mq('tab') {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+}
+
+.case-box_ttl {
+    font-size: 24px;
+    display: block;
+
+    @include config.mq('tab') {
+        font-size: 28px;
+    }
+}
+
+.case-box_subttl {
+    color: color.$color-main;
+    font-family: font.$font-family-en;
+    font-style: italic;
+    font-size: 14px;
+
+    @include config.mq('tab') {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+}
+
+.case-box_wrapper {
+    @include config.mq('tab') {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &:not(:first-child) {
+        margin-top: 32px;
+
+        @include config.mq('tab-pc') {
+            margin-top: 60px;
+        }
+    }
+}
+
+.case-item {
+    width: 100%;
+    box-shadow: 0 3px 12px rgb(0 0 0 / 16%);
+    border-radius: 0 0 12px 12px;
+
+    @include config.mq('tab') {
+        width: 48%;
+    }
+
+    @include config.mq('tab-pc') {
+        width: 46.3%;
+    }
+
+    &:not(:first-child) {
+        margin-top: 32px;
+
+        @include config.mq('tab') {
+            margin-top: 0;
+        }
+    }
+}
+
+.case-item_top {
+    background: color.$color-main;
+    border-radius: 12px 12px 0 0 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 20px;
+    overflow: visible;
+
+    @include config.mq('tab') {
+        height: 100px;
+    }
+
+    @include config.mq('tab-pc') {
+        padding: 18px 40px;
+    }
+}
+
+.case-item_names {
+    color: #fff;
+    font-weight: bold;
+}
+
+.case-item_genre {
+    font-size: 12px;
+
+    @include config.mq('tab') {
+        font-size: 14px;
+    }
+}
+
+.case-item_name {
+    font-size: 16px;
+
+    @include config.mq('tab') {
+        font-size: 26px;
+    }
+
+    span {
+        font-size: 14px;
+        margin-left: 12px;
+
+        @include config.mq('tab') {
+            margin-left: 16px;
+        }
+    }
+}
+
+.case-item_img {
+    width: 90px;
+    border-radius: 12px;
+
+    @include config.mq('pc') {
+        width: 160px;
+        height: 112px;
+        box-shadow: 0 3px 12px rgb(0 0 0 / 16%);
+    }
+}
+
+.case-item_wrapper {
+    padding: 20px 20px;
+
+    @include config.mq('tab-pc') {
+        padding: 40px 40px;
+    }
+}
+
+.case-item_course {
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 1px solid color.$color-border;
+    padding-bottom: 10px;
+}
+
+.case-item_lead {
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    padding-left: 25px;
+    margin-top: 32px;
+
+    @include config.mq('tab') {
+        font-size: 18px;
+        padding-left: 30px;
+    }
+
+    &::before {
+        background: url(/img/icon-checkbox.png) center / cover no-repeat;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        content: '';
+        top: 7px;
+        left: 0;
+
+        @include config.mq('tab') {
+            width: 20px;
+            height: 20px;
+            top: 6px;
+        }
+    }
+}
+
+.case-item_txt {
+    margin-top: 5px;
+}
+
+.case-btn {
+    margin-top: 40px;
+    max-width: 400px;
+
+    @include config.mq('tab-pc') {
+        margin-top: 60px;
+    }
+}

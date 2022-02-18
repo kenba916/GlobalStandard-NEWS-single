@@ -1,0 +1,102 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+/* about
+===================================== */
+.about {
+    margin: 0 0 60px;
+    position: relative;
+    overflow: hidden;
+
+    @include config.mq('tab') {
+        margin: 30px 0 125px;
+        background: linear-gradient(transparent 40.5%, color.$color-main-light 40.5%);
+        overflow: visible;
+    }
+}
+
+.about-bg_tab {
+    display: none;
+
+    @include config.mq('tab') {
+        transform: skewY(-10deg);
+        display: block;
+        background: url(/img/bg-company.png) center / cover no-repeat;
+        width: 43%;
+        height: 70.3125vw;
+        max-height: 800px;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        z-index: -1;
+    }
+
+    @include config.mq('tab') {
+        top: 50px;
+    }
+
+    @include config.mq('pc') {
+        width: 39%;
+    }
+}
+
+.about-inner {
+    transform: skewY(-10deg);
+
+    @include config.mq('tab') {
+        padding-top: 115px;
+    }
+}
+
+.about-content {
+    margin-top: 58px;
+
+    @include config.mq('tab') {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+}
+
+
+.about-txt {
+    line-height: 1.72;
+
+    @include config.mq('tab') {
+        width: calc(36.27% - 40px / 2)
+    }
+}
+
+.about-wrapper {
+    margin-top: 30px;
+    padding: 10.66667vw 0 32vw;
+    position: relative;
+
+    @include config.mq('tab') {
+        margin-top: 0px;
+        padding: 0;
+        width: calc(63.73% - 40px / 2)
+    }
+}
+
+.about-bg {
+    background: url(/img/bg-company.png) center / cover no-repeat;
+    width: 100%;
+    height: 96.53333vw;
+    position: absolute;
+    top: 0;
+    right: -60px;
+    z-index: -1;
+
+    @include config.mq('tab') {
+        display: none;
+    }
+}
+
+.about-img {
+    img {
+        vertical-align: top;
+    }
+}

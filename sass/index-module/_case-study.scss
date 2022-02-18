@@ -1,0 +1,96 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+/* case-study
+===================================== */
+.study {
+    background: url(/img/bg-company.png) no-repeat center / cover;
+    color: #fff;
+    position: relative;
+}
+
+.study-items {
+    margin-top: 40px;
+
+    @include config.mq('tab') {
+        margin-top: 80px;
+        display: grid;
+        gap: 70px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.study-item {
+    color: #fff;
+    display: block;
+
+    &:not(:first-child) {
+        margin-top: 52px;
+
+        @include config.mq('tab') {
+            margin-top: 0;
+        }
+    }
+
+    &:hover .study-item_icon {
+        border: 3px solid color.$color-accent-yellow;
+
+        &::after {
+            border-top: 3px solid color.$color-accent-yellow;
+            border-right: 3px solid color.$color-accent-yellow;
+        }
+    }
+}
+
+.study-item_img {
+    text-align: center;
+
+    img {
+        max-width: 685px;
+    }
+}
+
+.study-item_name {
+    font-size: 16px;
+    margin-top: 17px;
+    font-weight: bold;
+}
+
+.study-item_wrapper {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1;
+    align-items: center;
+}
+
+.study-item_ttl {
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    font-weight: bold;
+}
+
+.study-item_icon {
+    width: 29.5px;
+    height: 29.5px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(45deg);
+    transition: ease .3s;
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-60%, -40%);
+        width: 12px;
+        height: 12px;
+        border-top: 3px solid #fff;
+        border-right: 3px solid #fff;
+        transition: ease .3s;
+    }
+}

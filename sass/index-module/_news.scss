@@ -1,0 +1,79 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+/* news
+===================================== */
+.news {
+    margin: 0 0 100px;
+    background: linear-gradient(transparent 25%, color.$color-main-light 25%);
+
+    @include config.mq('tab') {
+        margin: 60px 0 40px;
+        background: linear-gradient(transparent 57%, color.$color-main-light 57%);
+    }
+}
+
+.news-inner {
+    transform: skewY(-10deg);
+}
+
+.news-items {
+    background: #fff;
+    margin: 60px auto 0;
+    padding: 40px 20px;
+    box-shadow: 0 3px 12px rgb(0 0 0 / 16%);
+    max-width: 768px;
+
+    @include config.mq('tab') {
+        padding: 60px 40px 40px;    
+        margin: 80px auto 0;
+    }
+}
+
+.news-item {
+    display: block;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    transition: ease .3s;
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+} 
+
+.news-item_wrapper {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1;
+    align-items: center;
+}
+
+.news-item_tag {
+    font-size: 12px;
+    color: color.$color-accent-red;
+    border: 1px solid color.$color-accent-red;
+    padding: 8px 19px;
+
+    @include config.mq('tab') {
+        font-size: 14px;
+    }
+}
+
+.news-item_date {
+    color: #888;
+}
+
+.news-item_txt {
+    margin-top: 14px;
+    line-height: 1.72;
+    font-weight: bold;
+
+    @include config.mq('tab') {
+        font-size: 16px;
+    }
+}

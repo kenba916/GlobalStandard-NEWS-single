@@ -1,0 +1,120 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+
+/* service
+===================================== */
+.service {
+    margin: 0 0 60px;
+    background: linear-gradient(transparent 50%, color.$color-main-light 50%);
+
+    @include config.mq('tab') {
+        margin: 60px 0 0;
+    }
+}
+
+.service-inner {
+    transform: skewY(-10deg);
+}
+
+.service-items {
+    @include config.mq('tab') {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.service-item {
+    width: 100%;
+
+    @include config.mq('tab') {
+        width: calc(33.333% - 12.72% / 3);
+    }
+
+    &:nth-child(2) {
+        @include config.mq('tab') {
+            margin-top: 60px;
+        }
+    }
+
+    &:nth-child(3) {
+        @include config.mq('tab') {
+            margin-top: 120px;
+        }
+    }
+}
+
+.service-item_wrapper {
+    position: relative;
+}
+
+.service-item_num {
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    display: inline-block;
+    font-size: 100px;
+    font-family: font.$font-family-en;
+    font-style: italic;
+    font-weight: 500;
+    color: color.$color-main;
+    text-shadow: 5px 5px #fff;
+}
+
+.service-item_img {
+    padding-top: 65px;
+    margin-left: 15px;
+    text-align: center;
+
+    @include config.mq('tab') {
+        padding-top: 85px;
+    }
+
+    img {
+        max-width: 640px;
+    }
+}
+
+.service-item_ttl {
+    position: absolute;
+    bottom: 33px;
+    left: 0;
+
+    @include config.mq('tab') {
+        left: -15px;
+    }
+
+    span {
+        display: inline-block;
+        background: color.$color-text-white;
+        color: color.$color-main;
+        font-weight: bold;
+        font-family: font.$font-family-en;
+        font-size: 28px;
+        padding-top: 5px;
+        line-height: 1.1;
+        white-space: nowrap;
+
+        @include config.mq('tab') {
+            font-size: 2.5vw;
+        }
+
+        @include config.mq('pc') {
+            font-size: 28px;
+        }
+
+        &:last-child {
+            margin-top: 8px;
+        }
+    }
+}
+
+.service-item_txt {
+    margin: 16px 0 0 15px;
+    line-height: 1.72;
+}
+
+
+

@@ -1,0 +1,121 @@
+@use "../setting/config";
+@use "../setting/font";
+@use "../setting/color";
+
+/* slider
+===================================== */
+.slide {
+    margin-left: 20px;
+    margin-top: 60px;
+    padding: 0 0;
+
+    @include config.mq('tab') {
+        margin-left: 50px;
+        padding: 0 0;
+    }
+
+    @include config.mq('pc') {
+        margin-top: 100px;
+    }
+}
+
+.slide-inner {
+    overflow: hidden;
+    position: relative;
+}
+
+.slider{
+    width: 100%;
+
+    &.-sp {
+        padding-left: 20px;
+
+        @include config.mq('tab') {
+            display: none;
+        }
+    }
+
+    &.-tab {
+        padding-left: 40px;
+
+        @include config.mq('sp') {
+            display: none;
+        }
+    }
+ }
+
+.slider-item {
+    img {
+        height: auto;
+        width: 100%;
+    }
+    
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+.slide-ttls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+
+    @include config.mq('tab') {
+        bottom: 60px;
+    }
+}
+
+.slide-ttl {
+    color: color.$color-main;
+    font-style: italic;
+    font-weight: bold;
+    font-family: font.$font-family-en;
+    line-height: 1.37;
+    @include config.fz_vw_sp(40);
+
+    @include config.mq('tab') {
+        @include config.fz_vw_tab(36);
+    }
+}
+
+.slide-ttl_one {
+    display: inline-block;
+    background: #fff;
+    margin-top: 3px;
+
+    @include config.mq('tab') {
+        margin-top: 10px;
+    }
+}
+
+.slide-ttl_wrapper {
+    @include config.mq('tab') {
+        display: flex;
+    }
+
+    span {
+        background: #fff;
+    }
+}
+
+.pl {
+    @include config.mq('tab') {
+        padding-left: 10px;
+    }
+}
+
+
+.slide-subttl {
+    display: inline-block;
+    background: color.$color-main;
+    color: color.$color-text-white;
+    font-weight: bold;
+    margin-top: 16px;
+    @include config.fz_vw_sp(16);
+
+    @include config.mq('tab') {
+        @include config.fz_vw_tab(12);
+    }
+}
